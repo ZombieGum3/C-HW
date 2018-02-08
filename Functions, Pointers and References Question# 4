@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+
+ double ConvertToFarenheight(double celcius){
+	
+	double faren = (celcius * 1.8 ) + 32; 
+	return faren;
+	
+ }// End Farenheight
+
+double ConvertToCelcius(double farenheight){
+	
+	double cels = (farenheight - 32) * .5556; 
+	return cels;
+	
+}// End Celcius
+
+
+int main(){
+
+	int f = 50;
+	int c = 50;
+	
+	double resultCels = ConvertToCelcius(f);
+	cout << "The conversion is equal to " << resultCels << " degrees Celcius." << endl;
+	
+	double resultFaren = ConvertToFarenheight(c);
+	cout << "The conversion is equal to " << resultFaren << " degrees Farenheight." << endl;
+	
+}// End main
