@@ -1,0 +1,34 @@
+#include <stdio.h>
+void reverse(int* values, size_t size)
+{
+	int temp;
+
+	for (int i = 0; i < size - 1; i++) {
+
+		temp = values[i];
+		values[i] = values[size - 1];
+		values[size - 1] = temp;
+
+		size-- ;
+
+	}
+}// end reverse
+int main()
+{
+	const int SIZE = 10;
+	int values[] = { 5, 4, 3, 2, 1, 10, 9, 8, 7, 6 };
+
+	for (int i = 0; i < SIZE; ++i)
+	{
+		printf("Value: %d\t", values[i]);
+	}
+
+	printf("\n");
+	reverse(values, SIZE);
+
+	for (int i = 0; i < SIZE; ++i)
+	{
+		printf("Reversed: %d\t", values[i]);
+	}
+	printf("\n");
+}
