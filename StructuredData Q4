@@ -1,32 +1,33 @@
-#include <stdbool.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <string>
+#include <vector>
 #include <iostream>
 using namespace std;
 
-struct InventoryItem {
+class InventoryItem {
+public:
+
+	InventoryItem(const char* sku, double price, size_t quantity, bool onSale)
+				: _sku(sku), _name(name), _age(age)
+				{}
+	
+	void sellItem const () { quantity -= 1; }
+	void addInventory const (size_t stock){ quantity += stock; }
+	void toggleSaleStatus const () { onSale = !onSale; }
+	
+	friend ostream& operator << (ostream& stream, const Contact& contact)
+	{
+		return stream << << "Item SKU: {" << item.sku << "} " << "$" << item.price << " -- "
+			<< item.quantity << " available. " << (item.onSale ? "true" : "false") << endl;
+	}
+	
+	
+private:
 	const char* sku;
 	double price;
 	size_t quantity;
 	bool onSale;
 };
-void printItem(InventoryItem& item)
-{
-	cout << "Item SKU: {" << item.sku << "} " << "$" << item.price << " -- "
-		<< item.quantity << " available. " << (item.onSale ? "true" : "false") << endl;
-}
-void sellItem(InventoryItem* item)
-{
-	item->quantity -= 1;
-}
-void addInventory(InventoryItem* item, size_t stock)
-{
-	item->quantity += stock;
-}
-void toggleSaleStatus(InventoryItem* item)
-{
-	item->onSale = !(item->onSale);
-}
+
 int main()
 {
 	InventoryItem item0 = { "1523041125", 12.00, 14, false };
